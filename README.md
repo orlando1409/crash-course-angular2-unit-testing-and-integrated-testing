@@ -1,3 +1,6 @@
+#crash-course-angular2-unit-testing-and-integrated-testing
+Angular crash course to develop unit tests and integrated tests using Karma and Protractor. For more information visit https://github.com/briebug/angular-2-testing
+
 # Ng2Testing
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
