@@ -1,0 +1,63 @@
+<div class="container">
+    <main id="content" class="widget-login-container" role="main">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-lg-4 offset-md-3 offset-sm-1">
+                <section class="widget animated fadeInUp" [ngClass]="addClass">
+                    <div class="row">
+                        <div class="page-header">
+                            <img src="/assets/images/logo.png" class="center-block img-responsive"
+                                 alt="Responsive image">
+                        </div>
+                        <form [formGroup]="loginForm" novalidate>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label for="username" class="sr-only">{{ 'username' | translate }}</label>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-user"></span>
+                                    </span>
+                                    <input id="username" name="username" type="text" class="form-control" required
+                                           [(ngModel)]="user.username" formControlName="username"
+                                           attr.placeholder="{{ 'username' | translate }}" autofocus tabindex="1">
+                                </div>
+                                <div *ngIf="showErrors && loginForm.controls.username.getError('required')"
+                                     class="alert alert-danger username-error">
+                                    {{ 'usernameRequired' | translate }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label for="password" class="sr-only">{{ 'password' | translate }}</label>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-lock"></span>
+                                    </span>
+                                    <input id="password" name="password" type="password" class="form-control" required
+                                           [(ngModel)]="user.password" formControlName="password"
+                                           attr.placeholder="{{ 'password' | translate }}" tabindex="2">
+                                </div>
+                                <div *ngIf="showErrors && loginForm.controls.password.getError('required')"
+                                     class="alert alert-danger password-error">
+                                    {{ 'passwordRequired' | translate }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="pull-right">
+                                    <a class="btn btn-default" [routerLink]="['/register']">{{ 'createAnAccount' |
+                                        translate }}</a>
+                                    <button type="submit" class="btn btn-primary" (click)="login()" tabindex="3">{{
+                                        'login' | translate }}
+                                    </button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="pull-right">
+                                    <a class="forgot-password" [routerLink]="['/forgot']">{{ 'accountTrouble' | translate }}</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
